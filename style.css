@@ -1,0 +1,122 @@
+:root {
+  --timing: 400ms;
+  --rotation: 20deg;
+}
+
+html {
+  color-scheme: #444343;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  perspective: 1000px;
+  background-color: #2a243d;
+}
+
+img {
+  max-width: 150%;
+}
+
+.strangerthings {
+  width: 280px;
+  aspect-ratio: 9 / 16;
+  outline: 3px solid;
+  background-image: url("vecna.png");
+  background-size: cover;
+  background-position: -150px center;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform var(--timing) ease;
+  border-radius: 20px;
+  box-shadow: none;
+}
+
+.strangerthings:hover {
+  transform: rotateX(var(--rotation));
+}
+
+.strangerthings::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  background-image: radial-gradient(circle, transparent 150px, rgb(0, 0, 0));
+  opacity: 0;
+  transition: opacity var(--timing);
+  border-radius: 20px;
+}
+
+.strangerthings:hover::before {
+  opacity: 1;
+}
+
+.strangerthings::after {
+  content: "";
+  position: absolute;
+  inset: 80% 0.5rem 0.5rem;
+  transform: translateZ(-100px);
+  background: black;
+  filter: blur(1rem);
+  z-index: 1;
+  transition: transform var(--timing);
+  border-radius: 20px;
+}
+
+.strangerthings:hover::after {
+  transform: translate(0, 50px) rotateX(calc(var(--rotation) * -1));
+}
+
+.bg-image {
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: -150 center;
+  border-radius: 20px;
+}
+.front-image,
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 0%;
+  transform: translateX(-50%);
+  transform-origin: bottom;
+}
+
+.front-image {
+  top: -20%; 
+  left: -28%;
+  right: 10%;
+  transform: scale(1.0) translateZ(50px);
+  opacity: 0;
+  z-index: 200;
+  transition: opacity var(--timing), transform var(--timing);
+}
+
+.strangerthings:hover .front-image {
+  opacity: 1;
+  transform: translateX(0%) translateY(0) translateZ(0px) rotateX(calc(var(--rotation) * -1)) scale(1.0);
+}
+
+.logo {
+  z-index: 100;
+  filter: hue-rotate(180deg);
+  width: 65%;
+  top: 23%; 
+  transition: var(--timing);
+}
+
+.strangerthings:hover .logo {
+  transform: translate(-50%, -50%) translateY(20%) translateZ(10px) rotateX(calc(var(--rotation) * -1));
+}
+
+.inspiration {
+  font-family: system-ui;
+  text-align: center;
+  max-width: 25ch;
+  margin-block-start: 3rem;
+  margin-inline: auto;
+}
