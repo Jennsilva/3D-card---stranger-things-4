@@ -1,4 +1,4 @@
-Este é um cartão 3D inspirado na série da Netflix "Stranger Things". O cartão apresenta uma imagem de Max sendo abduzida pelo Vecna, com o logotipo da série e uma imagem de fundo do Upside Down. O projeto foi criado usando HTML e CSS.
+Este é um cartão 3D inspirado na série da Netflix "Stranger Things 4". O cartão apresenta uma imagem de Max sendo abduzida pelo Vecna, com o logotipo da série e uma imagem de fundo do Upside Down. O projeto foi criado usando HTML e CSS.
 
 Criada pelos irmãos Duffer. A ideia foi criar um cartão 3D que capturasse a essência da série e proporcionasse uma experiência única para os fãs.
 
